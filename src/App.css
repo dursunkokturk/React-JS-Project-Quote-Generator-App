@@ -1,0 +1,35 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #202733;
+  font-family: Manrope;
+}
+
+.container{
+  background-color: #313A48;
+
+  margin: 120px 16px 232px 16px;
+  border-radius: 10px;
+}
+
+h6{
+  font-size: 11px;
+  font-weight: 800;
+  color: #53FFAA;
+  letter-spacing: 3.46px;
+
+  padding-top: 40px;
+  padding-inline: 110px;
+  padding-bottom: 24px;
+}
+
+h2{
+  color: #CEE3E9;
+  letter-spacing: -0.26px;
+  padding-inline: 24px;
+  padding-bottom: 24px;
+}
