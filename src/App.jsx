@@ -23,6 +23,9 @@ export default function App() {
       .then((data) => {
         const randomIndex = Math.floor(Math.random() * data.quotes.length)
 
+        // Tum Alinti Listesini Kaydediyoruz
+        setQuotes(data.quotes)
+
         // Rastgele Numara Seciyoruz
         setQuote(data.quotes[randomIndex])
 
@@ -37,6 +40,12 @@ export default function App() {
 
       )
   }, [])
+
+  const getRandomQuote = () => {
+    const randomIndex = Math.floor(Math.random() * quotes.length)
+    setQuote(quotes[randomIndex])
+    setIndex(quotes[randomIndex].id)
+  }
 
   return (
     <>
@@ -72,7 +81,10 @@ export default function App() {
             <div className="oval-right"></div>
             <div className="line-right"></div>
           </div>
-          <div className="circle" >
+          <div
+            className="circle"
+            onClick={getRandomQuote}
+          >
             <img src={Dice} alt="" />
           </div>
         </div>
