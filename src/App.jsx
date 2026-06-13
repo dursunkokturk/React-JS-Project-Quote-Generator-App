@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 export default function App() {
 
   const [quotes, setQuotes] = useState([]);
-  const [quote, setQuote] = useState([]);
+  const [quote, setQuote] = useState(null);
 
   // Tavsiye Numarasi
   const [index, setIndex] = useState(null);
@@ -35,7 +35,7 @@ export default function App() {
               "{quote ? quote.quote : 'Yükleniyor...'}"
             </blockquote>
             <figcaption>
-              <cite>— {quote ? quote.author : ''}</cite>
+              <cite>— Alıntı Sahibi</cite>
             </figcaption>
           </figure>
           <div className="lines-and-ovals">
