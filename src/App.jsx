@@ -9,6 +9,7 @@ export default function App() {
 
   // Tavsiye Numarasi
   const [index, setIndex] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch('https://dummyjson.com/quotes')
@@ -22,6 +23,7 @@ export default function App() {
 
         // Secilen Numara Alintinin Id'si Oluyor
         setIndex(data.quotes[randomIndex].id)
+        setLoading(false)
       })
   }, [])
 
@@ -31,12 +33,21 @@ export default function App() {
         <div className="text-and-figures">
           <h6>TAVSİYE #{index ?? '...'}</h6>
           <figure className='quote-card'>
-            <blockquote>
-              "{quote ? quote.quote : 'Yükleniyor...'}"
-            </blockquote>
-            <figcaption>
-              <cite>— {quote ? quote.author : ''}</cite>
-            </figcaption>
+            {loading ? (
+              <div className="loading">
+                <div className="loading-spinner"></div>
+                <p>Yükleniyor...</p>
+              </div>
+            ) : (
+              <>
+                <blockquote>
+                  "{quote ? quote.quote : 'Yükleniyor...'}"
+                </blockquote>
+                <figcaption>
+                  <cite>— {quote ? quote.author : ''}</cite>
+                </figcaption>
+              </>
+            )}
           </figure>
           <div className="lines-and-ovals">
             <div className="line-left"></div>

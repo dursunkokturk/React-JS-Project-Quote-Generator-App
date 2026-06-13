@@ -115,6 +115,33 @@ body {
   height: 24px;
 }
 
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 24px;
+}
+
+.loading p {
+  color: #CEE3E9;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.loading-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #4F5D74;
+  border-top-color: #53FFAA;   /* yeşil dönen kısım */
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
 @media (width>1109px){
   .container .text-and-figures .circle:hover{
     cursor: pointer;
