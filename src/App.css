@@ -10,11 +10,13 @@ body {
 }
 
 .container {
+  max-width: 540px;
   background-color: #313A48;
   margin: 120px 16px 232px 16px;
   border-radius: 10px;
   position: relative;
   overflow: visible;
+  margin: 220px auto;
 }
 
 .container .text-and-figures {
