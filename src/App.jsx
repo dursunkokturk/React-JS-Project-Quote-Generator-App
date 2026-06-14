@@ -44,16 +44,10 @@ export default function App() {
   const getRandomQuote = () => {
 
     // Alinti Yoksa Calismayacak
-    if(!quote) return
+    if(!quote.length) return
 
     // Ekranda Gorunen Alintiyi Goruntulenen Alintilar Listesinden Cikariyoruz
     const filteredQuotes = quotes.filter(q => q.id !== quote.id)
-
-    const randomIndex = Math.floor(Math.random() * quotes.length)
-    setQuote(quotes[randomIndex])
-    setIndex(quotes[randomIndex].id)
-
-    
 
     // Goruntulenmeyen Alintilar Arasindan Rastgele Index Secimi Yapiyoruz
     const randomIndex = Math.floor(Math.random() * filteredQuotes.length)
