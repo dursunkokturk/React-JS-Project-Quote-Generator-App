@@ -44,7 +44,7 @@ export default function App() {
   const getRandomQuote = () => {
 
     // Alinti Yoksa Calismayacak
-    if(!quote.length) return
+    if (!quote || quote.length === 0) return
 
     // Ekranda Gorunen Alintiyi Goruntulenen Alintilar Listesinden Cikariyoruz
     const filteredQuotes = quotes.filter(q => q.id !== quote.id)
