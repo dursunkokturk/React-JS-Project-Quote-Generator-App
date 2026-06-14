@@ -42,9 +42,26 @@ export default function App() {
   }, [])
 
   const getRandomQuote = () => {
+
+    // Alinti Yoksa Calismayacak
+    if(!quote) return
+
+    // Ekranda Gorunen Alintiyi Goruntulenen Alintilar Listesinden Cikariyoruz
+    const filteredQuotes = quotes.filter(q => q.id !== quote.id)
+
     const randomIndex = Math.floor(Math.random() * quotes.length)
     setQuote(quotes[randomIndex])
     setIndex(quotes[randomIndex].id)
+
+    
+
+    // Goruntulenmeyen Alintilar Arasindan Rastgele Index Secimi Yapiyoruz
+    const randomIndex = Math.floor(Math.random() * filteredQuotes.length)
+
+    // Secilen Alintiyi State Icine Yaziyoruz
+    const newQuote = filteredQuotes[randomIndex]
+    setQuote(newQuote)
+    setIndex(newQuote.id)
   }
 
   return (
